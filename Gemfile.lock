@@ -15,7 +15,10 @@ GEM
       ruby2_keywords
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    mini_portile2 (2.4.0)
     multipart-post (2.1.1)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     ruby2_keywords (0.0.2)
     telegram-bot-ruby (0.14.0)
       faraday
@@ -32,6 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri
   telegram-bot-ruby
 
 RUBY VERSION
