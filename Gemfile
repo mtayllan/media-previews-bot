@@ -6,3 +6,4 @@ ruby '2.7.1'
 
 gem 'nokogiri'
 gem 'telegram-bot-ruby'
+gem 'watir'

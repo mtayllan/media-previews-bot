@@ -11,7 +11,7 @@ Telegram::Bot::Client.run(TELEGRAM_TOKEN) do |bot|
     case message.text
     when %r{/d}
       urls = URI.extract(message.text)
-      if urls[0]
+      if urls[0]&.include?('instagram')
         data = GetInstagramMedia.call(urls[0])
         bot.api.send_message(chat_id: message.chat.id, text: "#{data[:description]}\n\n #{data[:media]}")
       else
