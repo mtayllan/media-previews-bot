@@ -15,8 +15,10 @@ Telegram::Bot::Client.run(TELEGRAM_TOKEN) do |bot|
         data = GetInstagramMedia.call(urls[0])
         bot.api.send_message(chat_id: message.chat.id, text: "#{data[:description]}\n\n #{data[:media]}")
       else
-        bot.api.send_message(chat_id: message.chat.id, text: 'Nenhuma media detectada.')
+        bot.api.send_message(chat_id: message.chat.id, text: 'Nenhuma mídia detectada.')
       end
     end
+  rescue
+    bot.api.send_message(chat_id: message.chat.id, text: 'Ocorreu um erro ao buscar por essa mídia.')
   end
 end
